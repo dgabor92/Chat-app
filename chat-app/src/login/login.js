@@ -32,7 +32,9 @@ class LoginComponent extends React.Component {
           <Typography component="h1" variant="h5">
             Log In!
           </Typography>
-          <form className={classes.form} onChange={(e) => this.submitLogin(e)}>
+          <form
+            className={classes.form} /**onChange={(e) => this.submitLogin(e)}*/
+          >
             <FormControl required fullWidth margin="normal">
               <InputLabel htmlFor="login-email-input">
                 Enter Your Email
@@ -60,6 +62,7 @@ class LoginComponent extends React.Component {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={(e) => this.submitLogin(e)}
             >
               Log In!
             </Button>

@@ -16,7 +16,7 @@ class ChatlistComponent extends React.Component {
   render() {
     const { classes } = this.props;
 
-    if (this.props.length > 0) {
+    if (this.props.chats.length > 0) {
       return (
         <main className={classes.root}>
           <Button
@@ -57,7 +57,7 @@ class ChatlistComponent extends React.Component {
                           <Typography component="span" color="textPrimary">
                             {_chat.messages[
                               _chat.messages.length - 1
-                            ].messages.substring(0, 30)}
+                            ].message.substring(0, 30)}
                           </Typography>
                         </React.Fragment>
                       }

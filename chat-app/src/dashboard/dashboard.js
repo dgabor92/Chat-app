@@ -10,7 +10,7 @@ class DashboardComponent extends React.Component {
       selectedChat: null,
       newChatFormVisible: false,
       email: null,
-      chat: [],
+      chats: [],
     };
   }
 
@@ -46,12 +46,14 @@ class DashboardComponent extends React.Component {
           .where("users", "array-contains", _usr.email)
           .onSnapshot(async (res) => {
             const chats = res.docs.map((_doc) => _doc.data());
+            console.log(chats);
             await this.setState({
               email: _usr.email,
               chats: chats,
             });
+            console.log(this.state);
           });
-        console.log(this.state);
+        // console.log(this.state);
       }
     });
   };
